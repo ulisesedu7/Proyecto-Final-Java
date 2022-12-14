@@ -51,6 +51,9 @@ public class CatalogOfMyThings {
         }
 
         case 3 ->
+          mainCatalog = editarCosas(mainCatalog, nombre);
+        
+        case 4 ->
           System.out.println("Gracias por usar usar el programa, ¡feliz día!");
 
         default ->
@@ -348,7 +351,73 @@ public class CatalogOfMyThings {
     return catalogo;
   }
   /*
-    Metodos para ediras cosas al catalogo
+    Metodos para editar cosas al catalogo
    */
+  public static Catalogo editarCosas(Catalogo catalogo, String nombre) {
+    // Initialize scanner
+    Scanner obiwan = new Scanner(System.in);
+    System.out.println("Hola " + nombre);
+    System.out.println("En esta sección podrás editar y agregar informacion a las cosas en tu catalogo");
 
+    do {
+      System.out.println("¿Qué te gustaría editar en tu catalogo?");
+
+      System.out.println("Elija que opcion deseas: ");
+      System.out.println("1 - Mis libros favoritos");
+      System.out.println("2 - Las mejores películas");
+      System.out.println("3 - Juegos geniales");
+      System.out.println("4 - Albumes de recuerdos");
+      System.out.println("5 - Regresar al menu principal \n");
+
+      System.out.print("Ingrese la opción: ");
+      int option = obiwan.nextInt();
+
+      switch (option) {
+        case 1 -> {
+          catalogo = editarLibro(catalogo);
+        }
+
+        case 2 -> {
+          catalogo = editarPeli(catalogo);
+        }
+
+        case 3 ->
+          catalogo = editarJuego(catalogo);
+
+        case 4 ->
+          catalogo = editarAlbum(catalogo);
+
+        default ->
+          System.out.println("Elija una opcion de las anteriores");
+      }
+
+      // Salir del programa 
+      if (option == 5) {
+        break;
+      }
+    } while (true);
+    
+    return catalogo;
+  }
+  
+  public static Catalogo editarLibro(Catalogo catalogo){
+    
+    return catalogo;
+  }
+  
+  public static Catalogo editarPeli(Catalogo catalogo){
+    
+    return catalogo;
+  }
+  
+  public static Catalogo editarJuego(Catalogo catalogo){
+    
+    return catalogo;
+  }
+  
+  public static Catalogo editarAlbum(Catalogo catalogo){
+    
+    return catalogo;
+  }
+  
 }
